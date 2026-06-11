@@ -1223,6 +1223,7 @@ Questions:
 3. What TTL do you want?
 4. Is degraded mode allowed when Redis is unavailable?
 5. Do you want this limited to submitOrder only?
+```
 
 
 
@@ -1243,7 +1244,7 @@ Also:
 
 
 Part 3
-```
+
 ## Prompt 30
 
 Read @CLAUDE.md first.
