@@ -4,19 +4,18 @@
 Investigating a production issue, bug report, or unexpected behavior. Read-only exploratory mode.
 
 ## Prompting style note
-For complex or multi-step tasks, wrap major sections in XML tags (e.g., `<context>`, `<task>`, `<constraints>`, `<verification>`) to reduce ambiguity and improve instruction following.
+For complex or multi-step tasks, structure the prompt with labeled sections (e.g., `Context:`, `Task:`, `Constraints:`, `Verification:`) to keep instructions unambiguous.
 
 ---
 
 ## Prompt
 
 ```text
-<context>
+Context:
 Read @CLAUDE.md and the files involved in [affected area].
 Read relevant `.claude/rules/` files before proceeding.
-</context>
 
-<task>
+Task:
 Do not modify anything.
 
 Incident:
@@ -34,7 +33,6 @@ Please:
 
 Keep the answer concise and concrete, with file references.
 Stop after this step.
-</task>
 ```
 
 ---

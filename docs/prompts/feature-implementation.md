@@ -4,7 +4,7 @@
 Implementing a scoped feature or fix in a single verified slice.
 
 ## Prompting style note
-For complex or multi-step tasks, wrap major sections in XML tags (e.g., `<context>`, `<task>`, `<constraints>`, `<verification>`) to reduce ambiguity and improve instruction following.
+For complex or multi-step tasks, structure the prompt with labeled sections (e.g., `Context:`, `Task:`, `Constraints:`, `Verification:`) to keep instructions unambiguous.
 
 ---
 
@@ -12,59 +12,49 @@ For complex or multi-step tasks, wrap major sections in XML tags (e.g., `<contex
 Use this for small, well-understood changes.
 
 ```text
-<context>
+Context:
 Read @CLAUDE.md and the relevant files first.
 Read relevant `.claude/rules/` files (e.g., `python-style.md`, `testing.md`, `typing.md`) before proceeding.
-</context>
 
-<task>
+Task:
 [one clear task]
-</task>
 
-<goal>
+Goal:
 [what should be true when done]
-</goal>
 
-<scope>
+Scope:
 - Change only: [files/modules/areas]
 - Do not change: [out-of-scope areas]
-</scope>
 
-<constraints>
+Constraints:
 - Python 3.13
 - Follow existing project patterns
 - Keep the diff minimal
 - Do not introduce new dependencies unless necessary
 - Preserve backward compatibility unless explicitly approved
-</constraints>
 
-<specialist-hint>
+Specialist hint:
 [if applicable: use explorer first, then summarize; or invoke a specific skill]
-</specialist-hint>
 
-<approval-rule>
+Approval rule:
 [if applicable: stop and ask for approval before X]
-</approval-rule>
 
-<implementation>
+Implementation:
 - Reuse existing abstractions where possible
 - Prefer simple, explicit code over cleverness
 - Add or update tests only for behavior affected by this task
-</implementation>
 
-<verification>
+Verification:
 - Run: `make test`, `make lint`, `make typecheck`, or `make check` for the full gate
 - If a check fails, fix the root cause and rerun
 - Report the exact files changed and a brief rationale for each
-</verification>
 
-<output>
+Output:
 1. Short summary
 2. Plan
 3. Changes made
 4. Verification results
 5. Risks / follow-ups
-</output>
 ```
 
 ---

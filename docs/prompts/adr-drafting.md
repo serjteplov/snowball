@@ -4,19 +4,18 @@
 Before the first implementation pass on a greenfield project, large feature, or architectural change. Spec-first workflow for ambiguous tasks.
 
 ## Prompting style note
-For complex or multi-step tasks, wrap major sections in XML tags (e.g., `<context>`, `<task>`, `<constraints>`, `<verification>`) to reduce ambiguity and improve instruction following.
+For complex or multi-step tasks, structure the prompt with labeled sections (e.g., `Context:`, `Task:`, `Constraints:`, `Verification:`) to keep instructions unambiguous.
 
 ---
 
 ## Prompt
 
 ```text
-<context>
+Context:
 Read @CLAUDE.md, existing ADRs in @docs/adr/, and the relevant code.
 Read relevant `.claude/rules/` files (e.g., `python-style.md`, `testing.md`, `typing.md`) before proceeding.
-</context>
 
-<task>
+Task:
 We need to make an architectural decision about [topic].
 
 Do not implement yet.
@@ -41,7 +40,6 @@ Please:
 
 Keep asking until the spec is complete.
 Stop after this step.
-</task>
 ```
 
 ---

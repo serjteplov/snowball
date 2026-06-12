@@ -4,7 +4,7 @@
 After coding, before human review. Covers both self-review and peer/PR review.
 
 ## Prompting style note
-For complex or multi-step tasks, wrap major sections in XML tags (e.g., `<context>`, `<task>`, `<constraints>`, `<verification>`) to reduce ambiguity and improve instruction following.
+For complex or multi-step tasks, structure the prompt with labeled sections (e.g., `Context:`, `Task:`, `Constraints:`, `Verification:`) to keep instructions unambiguous.
 
 ---
 
@@ -21,11 +21,10 @@ For complex or multi-step tasks, wrap major sections in XML tags (e.g., `<contex
 ### Prompt
 
 ```text
-<context>
+Context:
 Read @CLAUDE.md and relevant `.claude/rules/` files first.
-</context>
 
-<task>
+Task:
 Review the current diff against the approved plan as a strict senior engineer.
 
 Check for:
@@ -35,13 +34,11 @@ Check for:
 - hidden breaking changes
 - weak naming
 - incomplete tests
-- duplicate logics
 - unclear error handling
 - deviations from the stated task
 
 Report only issues that affect correctness, maintainability, or scope.
 Ignore cosmetic style preferences unless they materially improve the result.
-</task>
 ```
 
 ### Output format
@@ -60,11 +57,10 @@ Ignore cosmetic style preferences unless they materially improve the result.
 ### Prompt
 
 ```text
-<context>
+Context:
 Read @CLAUDE.md and relevant `.claude/rules/` files first.
-</context>
 
-<task>
+Task:
 Review the following diff as a strict senior engineer.
 
 Focus on:
@@ -77,7 +73,6 @@ Focus on:
 
 Do not suggest purely cosmetic changes unless they materially improve maintainability.
 For each issue, cite the file and line, explain the risk, and suggest a fix or ask a clarifying question.
-</task>
 ```
 
 ### Output format

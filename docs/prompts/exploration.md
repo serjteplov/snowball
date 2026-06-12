@@ -4,19 +4,18 @@
 Before touching unfamiliar code. Keeps the model in analysis mode and prevents premature edits.
 
 ## Prompting style note
-For complex or multi-step tasks, wrap major sections in XML tags (e.g., `<context>`, `<task>`, `<constraints>`, `<verification>`) to reduce ambiguity and improve instruction following.
+For complex or multi-step tasks, structure the prompt with labeled sections (e.g., `Context:`, `Task:`, `Constraints:`, `Verification:`) to keep instructions unambiguous.
 
 ---
 
 ## Variant A: General discovery
 
 ```text
-<context>
+Context:
 Read @CLAUDE.md first.
 Read relevant `.claude/rules/` files (e.g., `python-style.md`, `testing.md`, `typing.md`) before proceeding.
-</context>
 
-<task>
+Task:
 Read [relevant directories/files].
 
 Do not modify anything.
@@ -31,7 +30,6 @@ Please:
 
 Keep the answer concise and concrete, with file references.
 Stop after this step.
-</task>
 ```
 
 ---
@@ -39,17 +37,15 @@ Stop after this step.
 ## Variant B: Targeted exploration
 
 ```text
-<context>
+Context:
 Read @CLAUDE.md first.
 Read relevant `.claude/rules/` files before proceeding.
-</context>
 
-<task>
+Task:
 Inspect only the files relevant to [topic].
 Explain the current flow, relevant abstractions, and where a change should live.
 Do not propose code yet.
 Stop after this step.
-</task>
 ```
 
 ---
