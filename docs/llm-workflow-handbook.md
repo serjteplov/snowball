@@ -8,6 +8,15 @@ Strong coding prompts define four things clearly: the task, the scope, the const
 
 Good prompts are operational rather than abstract. Instead of asking the model to “make it better,” ask it to inspect specific files, explain the current behavior, propose options, implement one bounded step, and run exact checks such as tests or lint commands.[cite:174][cite:181]
 
+## Using Agents and Skills
+
+* Do this subtask in the main thread. Do not delegate yet
+* Use explorer first, then summarize findings before proposing changes
+* Use reviewer on this diff and return only risks and recommendations
+* If the first specialist is weak, try one better-matched specialist automatically
+* Invoke skill directly: /api-integrator payment-timeout-policy
+
+
 ## Prompt Structure
 
 A dependable prompt usually contains these blocks:
@@ -15,9 +24,11 @@ A dependable prompt usually contains these blocks:
 1. **Context** — what project this is, which files matter, and which rules to read first.[cite:13][cite:181]
 2. **Task** — one concrete objective, stated in one or two sentences.[cite:174]
 3. **Scope** — what may change and what must not change.[cite:181]
-4. **Constraints** — Python version, dependency policy, API stability, style expectations, and performance or architectural limits.[cite:181][cite:174]
-5. **Verification** — exact commands to run and the expectation to fix failures before reporting back.[cite:13][cite:181]
-6. **Output format** — how the answer should be structured, such as plan, changed files, test results, and risks.[cite:174]
+4. **Specialist hint** - if need to tell which agent should be used
+5. **Approval rule** - if needed to expicitly instruct the agent for specific rule
+6. **Constraints** — Python version, dependency policy, API stability, style expectations, and performance or architectural limits.[cite:181][cite:174]
+7. **Verification** — exact commands to run and the expectation to fix failures before reporting back.[cite:13][cite:181]
+8. **Output format** — how the answer should be structured, such as plan, changed files, test results, and risks.[cite:174]
 
 A simple default template:
 
