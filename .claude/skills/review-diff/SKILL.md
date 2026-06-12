@@ -26,6 +26,7 @@ Reviewing local changes before commit or after a coding slice.
 - Type hints.
 - Test coverage for new logic.
 - Unintended config churn.
+- Duplicating
 
 ## Output
 Return:
