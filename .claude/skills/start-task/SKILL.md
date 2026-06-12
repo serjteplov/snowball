@@ -12,10 +12,10 @@ allowed-tools:
 
 # Start Task
 
-## Goal
-Start work safely and consistently in this repository.
+## Trigger
+Starting a new coding task, issue, bugfix, or feature.
 
-## Steps
+## Procedure
 1. Read `CLAUDE.md`.
 2. Read relevant files from `.claude/rules/`.
 3. Read `README.md`, `pyproject.toml`, and affected source files.
@@ -23,16 +23,9 @@ Start work safely and consistently in this repository.
 5. Identify risks, assumptions, and unknowns.
 6. Propose a minimal implementation plan before editing.
 7. Prefer the smallest working change.
-8. After edits, run the minimum relevant checks.
+8. After edits, run `make check`.
 
-## Repository defaults
-- Python code lives under `src/`.
-- Tests live under `tests/`.
-- Use `ruff format`, `ruff check`, `mypy`, and `pytest`.
-- Do not edit `.env`.
-- Do not add dependencies unless necessary.
-
-## Output style
+## Output
 Return:
 - short task summary,
 - affected files,
