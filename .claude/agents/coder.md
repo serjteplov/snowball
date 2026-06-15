@@ -1,6 +1,6 @@
 ---
 name: coder
-description: Write and edit Python code, tests, and configuration in small, verified slices.
+description: Write and edit Python code, tests, and configuration in small, verified slices. Implement coding plans.
 allowed-tools:
   - Read
   - Bash
