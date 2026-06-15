@@ -228,7 +228,7 @@ class TestDividendsAndCoupons:
         assert len(rows) == 1
         row = rows[0]
         assert row.event == "Dividend"
-        assert row.symbol == "TCSG"
+        assert row.symbol == "T"
         assert row.quantity == Decimal("108")
         assert row.fee_tax == Decimal("14")
         assert row.price == Decimal("36")

@@ -11,7 +11,7 @@ from package_snowball.core.mapping import map_symbol
 
 def test_map_symbol_known_stock() -> None:
     """A known stock name maps to its ticker."""
-    assert map_symbol("ПАО Сбербанк, ап") == "SBER"
+    assert map_symbol("ПАО Сбербанк, ап") == "SBERP"
 
 
 def test_map_symbol_known_bond() -> None:

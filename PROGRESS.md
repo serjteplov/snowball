@@ -6,7 +6,7 @@ Project bootstrapped with Python 3.13+, `src/` layout, pytest, ruff, mypy, pre-c
 
 - Interviewed requirements, explored MTS `.xlsx` sample and Snowball CSV template.
 - Selected ETL pipeline with domain models (inside-out implementation).
-- Wrote `SPEC.md` and ADR `0002-mts-to-snowball-transformer-architecture.md`.
+- Wrote spec `docs/specs/2026-06-15-mts-transformer.md` and ADR `0002-mts-to-snowball-transformer-architecture.md`.
 
 ## 2026-06-15 — Implementation complete
 

@@ -1,3 +1,9 @@
+---
+status: completed
+task: mts-to-snowball transformer
+date: 2026-06-15
+---
+
 # SPEC: MTS → Snowball Brokerage Report Transformer
 
 ## Goal
