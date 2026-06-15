@@ -21,4 +21,4 @@ Project bootstrapped with Python 3.13+, `src/` layout, pytest, ruff, mypy, pre-c
 
 ## Next step
 
-- Add a golden-file end-to-end test comparing sample xlsx output to expected CSV.
+- Await user review or start the next prioritized task (e.g., API to transform brokerage reports online).
